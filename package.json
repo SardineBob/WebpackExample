@@ -1,0 +1,25 @@
+{
+  "name": "react-mobx",
+  "version": "1.0.0",
+  "description": "npm init\r # React安裝\r     npm install --save react react-dom\r # Babel安裝與配置\r ## - 安裝核心套件(babel-core)\r ## - 安裝支援錯誤語法檢查(babel-eslint)\r ## - 安裝支援編譯ES6語法(babel-preset-es2015)\r ## - 安裝支援編譯JSX語法(babel-preset-react)\r ## - 安裝用webpack編譯時的loader(babel-loader)\r     npm install --save-dev babel-core babel-eslint babel-preset-es2015 babel-preset-react\r ## 接著在NPM的根目錄中建立一個【.babelrc】的檔案，告訴babel編譯的各項設定，需引入那些額外套件\r     {\r         \"presets\":[\r             \"es2015\",\r             \"react\"\r         ]\r     }\r # Webpack安裝\r ## 因為使用babel需要逐一針對檔案編譯，故搭配一個自動打包套件webpack，幫助我們將整個網站做打包\r     //npm install --save-dev webpack webpack-cli //這是加至專案\r     npm install -g webpack webpack-cli //這會加到本機端(路徑為：C:\\Users\\Bob-Lai\\AppData\\Roaming\\npm)\r ## Webpack同樣需要做一些設定檔，在npm根目錄新增一個webpack.config.js，並輸入以下內容，所有設定會放在module.exports中\r     var path = require('path');\r     var webpack = require('webpack');",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
