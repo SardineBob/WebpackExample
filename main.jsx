@@ -1,5 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-//import Demo from './Demo.jsx'
+import CounterForReactState from './CounterForReactState'
+import CounterForMobX from './CounterForMobX'
+import AppStore from './AppStore'
+import { Provider } from 'mobx-react';
 
-ReactDOM.render(<div>哈囉，react</div>,document.getElementById('app'));
+const MyStore = {
+    countStore: new AppStore()
+}
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                哈囉，react<br />
+                <hr />
+                <CounterForReactState />
+                <hr />
+                <Provider {...MyStore}>
+                    <CounterForMobX aa='test' />
+                </Provider>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById('app'));

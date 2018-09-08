@@ -25,7 +25,8 @@ module.exports = {
                     // '-loader' 可省略，即 'babel'
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env']
+                        presets: ['env'],
+                        plugins: ['transform-decorators-legacy','transform-class-properties']
                     }
                 }
             }

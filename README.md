@@ -1,5 +1,7 @@
 # NPM環境初始建置
     npm init
+# 如果是從github抓下來的專案，就執行以下，讓npm自行抓下載對應版本
+    npm i
 # React安裝
     npm install --save react react-dom
 # Babel安裝與配置
@@ -84,3 +86,23 @@
 # 執行webpack，兩種做法
     webpack --watch
     webpack -p
+# MobX安裝
+    npm install --save-dev mobx@4.3.1 mobx-react@5.2.3
+# 安裝讓babel認識MobX修飾詞的plugin
+    npm install --save-dev babel-plugin-transform-class-properties@6.24.1 babel-plugin-transform-decorators-legacy@1.3.5
+# 開啟webpack.config.js，把上述babel的plugin加入到設定檔中
+    use: {
+        // '-loader' 可省略，即 'babel'
+        loader: 'babel-loader',
+        options: {
+            presets: ['env'],
+            plugins: ['transform-decorators-legacy','transform-class-properties']
+            }
+        }
+# MobX最主要的三個修飾詞
+## - observable
+### 將變數加入觀察，當變數值有異動，會直接啟動render
+## - computed
+### 這是改變值的邏輯，呼叫方只要接受到return回來的值，就會出發render
+## - action
+### 這是function
