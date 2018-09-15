@@ -106,3 +106,13 @@
 ### 這是改變值的邏輯，呼叫方只要接受到return回來的值，就會出發render
 ## - action
 ### 這是function
+
+# React拖拉元件使用react-sortable-hoc第三方套件
+    npm install react-sortable-hoc --save
+## 使用react-sortable-hoc的三個要點
+### 1.會分成三個區塊，item、list、sortable
+### 2.item component必須被SortableElement()再包裝，才能由list區塊呼叫使用
+### 3.list component再render item component的時候，必須給予屬性【index】，這個index是在SortableElement()中使用，並指的是array的index，這很重要，元件才知道哪兩個array的Index對調
+### 4.list component必須被SortableContainer()再包裝，才能由sortable區塊呼叫使用
+### 5.sortable component必須準備一個onSortEnd()方法，當拖拉排序結束時，要做的事情，這是改變state狀態的邏輯
+### 6.onSortEnd()等方法的事件，是用於SortableContainer()包裝物件所使用，也就是說必須當作在render list component時的屬性，其他還有很多event可以使用，詳請請看github官網【 https://github.com/clauderic/react-sortable-hoc 】

@@ -4,6 +4,10 @@ import CounterForReactState from './CounterForReactState'
 import CounterForMobX from './CounterForMobX'
 import AppStore from './AppStore'
 import { Provider } from 'mobx-react';
+import FlowList from './FlowList'
+import SortableComponent from './SortableComponent'
+import FlowSortable from './FlowSortable'
+
 
 const MyStore = {
     countStore: new AppStore()
@@ -23,6 +27,9 @@ class MyComponent extends React.Component {
                 <Provider {...MyStore}>
                     <CounterForMobX aa='test' />
                 </Provider>
+                <hr />
+                {/*<FlowList />*/}
+                <FlowSortable />
             </div>
         )
     }
