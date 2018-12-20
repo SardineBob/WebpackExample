@@ -116,3 +116,5 @@
 ### 4.list component必須被SortableContainer()再包裝，才能由sortable區塊呼叫使用
 ### 5.sortable component必須準備一個onSortEnd()方法，當拖拉排序結束時，要做的事情，這是改變state狀態的邏輯
 ### 6.onSortEnd()等方法的事件，是用於SortableContainer()包裝物件所使用，也就是說必須當作在render list component時的屬性，其他還有很多event可以使用，詳請請看github官網【 https://github.com/clauderic/react-sortable-hoc 】
+- [x] This is a complete item
+- [ ] This is an incomplete item
